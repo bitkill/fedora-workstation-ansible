@@ -1,0 +1,26 @@
+  - name: Install Nmap
+    dnf: 
+      name: nmap
+      state: present
+      
+  - name: Install htop
+    dnf: 
+      name: htop
+      state: present
+      
+  - name: Install VLC
+    dnf: 
+      name: vlc
+      state: present
+    tags: vlc
+    
+  - name: Install RpmFusion's multimedia codecs
+    dnf:
+      name: '@multimedia'
+      state: present
+      
+  - name: Install Gnome tweak tools
+      become: yes
+      package:
+        name: gnome-tweak-tools
+        state: present

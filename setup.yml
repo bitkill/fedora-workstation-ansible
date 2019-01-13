@@ -1,0 +1,22 @@
+# Usage: sudo ansible-playbook setup.yml -f 10
+
+---
+- hosts: localhost
+  become: yes
+  become_method: sudo
+  
+  vars_files:
+    - variables/main.yml
+    
+  pre_tasks:
+    - name: Update repositories
+      dnf: update_cache=yes
+      changed_when: False
+    
+  tasks:
+   - include: tasks/packagekit-fix.yml
+   - include: tasks/rpmfusion.yml
+   - include: tasks/devtools/main.yml
+# - include: tasks/flathub/main.yml
+   
+ 
