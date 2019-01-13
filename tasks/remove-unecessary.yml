@@ -1,0 +1,5 @@
+  - name: Remove Rythmbox
+    become: yes
+    package:
+      name: rythmbox
+      state: absent

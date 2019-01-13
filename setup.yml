@@ -7,7 +7,10 @@
   
   vars_files:
     - variables/main.yml
-    
+
+  roles:
+    - geerlingguy.docker
+
   pre_tasks:
     - name: Update repositories
       dnf: update_cache=yes
@@ -15,8 +18,11 @@
     
   tasks:
    - include: tasks/packagekit-fix.yml
+   - include: tasks/remove-unecessary.yml
    - include: tasks/rpmfusion.yml
    - include: tasks/devtools/main.yml
+   - include: tasks/utils/main.yml
+   - include: tasks/ops/main.yml
 # - include: tasks/flathub/main.yml
    
  

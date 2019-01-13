@@ -1,7 +1,7 @@
 
-- shell:            /bin/rpm -q --quiet rpmfusion-free-release && echo installed || echo missing
-  register:         rpmfusion
+- shell: /bin/rpm -q --quiet rpmfusion-free-release && echo installed || echo missing
+  register: rpmfusion
 
 - name: Add RPMfusion repo
-  command: yum localinstall -y --nogpgcheck {{ rpmfusion_rpm }}
+  command: dnf localinstall -y --nogpgcheck {{ rpmfusion_rpm }}
   when: ansible_distribution == "Fedora" and rpmfusion.stdout == "missing"

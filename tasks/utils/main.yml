@@ -3,7 +3,7 @@
       name: nmap
       state: present
       
-  - name: Install htop
+  - name: Install Htop
     dnf: 
       name: htop
       state: present
@@ -20,7 +20,7 @@
       state: present
       
   - name: Install Gnome tweak tools
-      become: yes
-      package:
-        name: gnome-tweak-tools
-        state: present
+    become: yes
+    package:
+      name: gnome-tweaks
+      state: present
