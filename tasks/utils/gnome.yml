@@ -1,0 +1,11 @@
+---
+  - name: Set minimize, maximize, close buttons on right
+    command: gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
+
+  - name: Install Gnome tweak tools
+    become: yes
+    package:
+      name: gnome-tweaks
+      state: present
+
+# missing -> remove background logo extension

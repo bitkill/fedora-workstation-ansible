@@ -1,0 +1,28 @@
+---
+- hosts: localhost
+  tasks:
+
+    - name: Install Builder
+      become: yes
+      package:
+        name: gnome-builder
+        state: present
+
+    - name: Install Gnome tweak tools
+      become: yes
+      package:
+        name: gnome-tweak-tools
+        state: present
+
+
+    - name: Install Htop
+      become: yes
+      package:
+        name: htop
+        state: present
+
+    - name: Remove Rhythmbox
+      become: yes
+      package:
+        name: rhythmbox
+        state: absent

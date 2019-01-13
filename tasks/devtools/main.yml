@@ -18,3 +18,9 @@
     package:
       name: gnome-builder
       state: present
+
+  - name: Install Tilix (Tiling terminal)
+    become: yes
+    package:
+      name: tilix
+      state: present

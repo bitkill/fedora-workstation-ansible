@@ -7,6 +7,11 @@
     dnf: 
       name: htop
       state: present
+
+  - name: Install Midnight Commander
+    dnf:
+      name: mc
+      state: present
       
   - name: Install VLC
     dnf: 
@@ -19,8 +24,5 @@
       name: '@multimedia'
       state: present
       
-  - name: Install Gnome tweak tools
-    become: yes
-    package:
-      name: gnome-tweaks
-      state: present
+  - name: Gnome Specific
+    include: "gnome.yml"
