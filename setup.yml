@@ -7,9 +7,11 @@
   
   vars_files:
     - variables/main.yml
+    - variables/gnome-extensions.yml
 
   roles:
     - geerlingguy.docker
+    - ansible-gnome-extensions
 
   pre_tasks:
     - name: Update repositories

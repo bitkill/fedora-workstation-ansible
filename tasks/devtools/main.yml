@@ -24,3 +24,14 @@
     package:
       name: tilix
       state: present
+
+  - name: Install Neofetch
+    dnf:
+      name: neofetch
+      state: present
+
+
+  - name: Install NodeJS
+    dnf:
+      name: nodejs
+      state: present

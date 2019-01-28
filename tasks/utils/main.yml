@@ -8,6 +8,12 @@
       name: htop
       state: present
 
+
+  - name: Install xclip
+    dnf:
+      name: xclip
+      state: present
+
   - name: Install Midnight Commander
     dnf:
       name: mc

@@ -24,6 +24,11 @@
       name: cockpit
       state: present
 
+  - name: Install Cockpit's SELinux integration
+    become: yes
+    package:
+      name: cockpit-selinux
+      state: present
 
   - name: Install Cockpit's Docker integration
     become: yes
@@ -36,3 +41,4 @@
       name: cockpit
       enabled: yes
       state: started
+     
